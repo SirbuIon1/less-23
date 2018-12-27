@@ -1,3 +1,11 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
+/* eslint-disable no-var */
+
+// import '.../css/style.css';
+require('../css/style.css');
+
 function getText(e) {
   switch (e.target.id) {
     case 'first':
@@ -8,15 +16,16 @@ function getText(e) {
 }
 
 function updateElement(e) {
-  let text = getText(e);
+  var text = getText(e);
 
   if (text) {
     document.getElementById('result').innerHTML = 'You clicked ' + text + ' button';
   }
 }
 
+
 function showTagName(e) {
-  let phaseName = e.eventPhase === 1 ? 'capturing' : 'bubling';
+  var phaseName = e.eventPhase === 1 ? 'capturing' : 'bubling';
   switch (e.eventPhase) {
     case 1:
       phaseName = 'capturing';
@@ -31,8 +40,7 @@ function showTagName(e) {
       break;
   }
 
-  console.log(phaseName, '', e.target.id, '',e.target.tagName);
-
+  console.log(phaseName, '', e.target.id, '', e.target.tagName);
 }
 
 document.getElementById('button-container').addEventListener('click', updateElement);
